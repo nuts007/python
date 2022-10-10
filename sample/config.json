@@ -1,0 +1,7 @@
+{
+    "FILENAME": "server_info",
+    "SUCCESS": "success",
+    "ERROR": "error",
+    "ENCODETYPE": "utf-8",
+    "FILETYPE": "json"
+}
