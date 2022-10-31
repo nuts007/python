@@ -6,9 +6,10 @@
 import mysql.connector as mc
 import json
 import os
+import datetime
 
 def main():
-    path = "./auth/mysql_info.json"
+    path = "/workplace/test/auth/mysql_info.json"
     
     if os.path.isfile(path) == False:
         print("mysql info file not found")
@@ -17,9 +18,12 @@ def main():
             conf = json.load(f)
             connect = mc.connect(user=conf["mysql"]["user"], password=conf["mysql"]["password"], host=conf["mysql"]["host"], database=conf["mysql"]["db"])
             cursor = connect.cursor()
-            cursor.execute("select * from test")
+            now = datetime.datetime.now()
+            format_now = now.strftime("%y-%m-%d")
+            cursor.execute("select * from char_test")
             for row in cursor.fetchall():
                 print(row)
+            # connect.commit()
 
             f.close()
 
