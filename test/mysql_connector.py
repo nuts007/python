@@ -9,7 +9,7 @@ import os
 import datetime
 
 def main():
-    path = "/workplace/test/auth/mysql_info.json"
+    path = "/workplace/auth/mysql_info.json"
     
     if os.path.isfile(path) == False:
         print("mysql info file not found")
